@@ -35,6 +35,7 @@ public class ProxyUtils {
 		 //第三个参数是invocationhandle的实现类 或者直接匿名内部类
 		 Myhandle h = new Myhandle(target,interceptor);
 		 Object proxy = Proxy.newProxyInstance(loader, interfaces, h);
+		 
 		 return proxy;
 	}
 }
