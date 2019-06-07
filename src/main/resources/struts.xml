@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+<constant name="struts.devMode" value="true"></constant>
+<package name="mystruts1" extends="struts-default" strict-method-invocation="false" >
+<action name="*_*" class="com.woniu.action.{1}Action" method="{2}">
+<result name="add" type="chain">{1}_show</result>
+<result name="show" type="dispatcher">/show.jsp</result>
+<result name="del" type="chain">{1}_show</result>
+<result name="findOne" type="dispatcher">/update.jsp</result>
+<result name="update" type="chain">{1}_show</result>
+</action>
+</package>
+</struts>
