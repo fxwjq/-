@@ -18,7 +18,7 @@ public class CarServiceImpl implements ICarService {
 	public Page findPageData(int p, int size) {
 		int rowCount  = dao.getRowCount();
 		Page page = new Page(p,rowCount,size);
-		List<Car> car = dao.find(p, size);
+		List<Car> car = dao.find(page.getStartLine(), size);
 		 page.setList(car);
 		 return page;
 	}

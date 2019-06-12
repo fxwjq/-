@@ -54,6 +54,10 @@ public class CarAction extends ActionSupport implements Interceptor {
 		ServletActionContext.getRequest().setAttribute("car", car);
 		return "findOne";
 	}
+	public String findByName() {
+	System.out.println(brand);
+		return null;
+	}
 	
 	public void setP(int p) {
 		this.p = p;
@@ -89,7 +93,7 @@ public class CarAction extends ActionSupport implements Interceptor {
 		}else if("delete".equals(invocation.getMethod().getName())) {
 			id = (int)invocation.getArgs()[0];
 			car = service.findOne(id);//删除时还有一个查一个的过程
-			if(Integer.parseInt(car.getPrice())<500) {
+			if(Double.parseDouble(car.getPrice())<500) {
 				invocation.invoke();
 			}
 		}

@@ -1,6 +1,8 @@
 package com.woniu.bean;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Car implements Serializable{
 	@Override
@@ -11,6 +13,7 @@ public class Car implements Serializable{
 	private int id;
 	private String brand;
 	private String price;
+	private Set<String> address = new HashSet<>();
 	public int getId() {
 		return id;
 	}
